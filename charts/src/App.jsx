@@ -1,5 +1,11 @@
 import HistoryChart from './components/Chart';
-import GaugeChart from './components/Gauge';
+import LineChart from './components/LineChart';
+import BarChart from './components/BarChart';
+import PieChart from './components/PieChart';
+import RadarChart from './components/RadarChart';
+import PolarAreaChart from './components/PolarAreaChart';
+import DoughnutChart from './components/DoughnutChart';
+import ScatterChart from './components/ScatterChart';
 
 const sample = [
   { ts: '2025-01-01 08:00', value: 120 },
@@ -55,9 +61,42 @@ const sample = [
 
 export default function Dashboard() {
   return (
-    <>
-  <HistoryChart rawData={sample} />
-  <GaugeChart />
-  </>
+    <div className="dashboard-container">
+      <div className="dashboard-title">Dashboard Grafici</div>
+      <div className="charts-grid">
+        <div className="chart-card">
+          <h2>History Chart</h2>
+          <HistoryChart rawData={sample} />
+        </div>
+        <div className="chart-card">
+          <h2>Line Chart</h2>
+          <LineChart />
+        </div>
+        <div className="chart-card">
+          <h2>Bar Chart</h2>
+          <BarChart />
+        </div>
+        <div className="chart-card">
+          <h2>Pie Chart</h2>
+          <PieChart />
+        </div>
+        <div className="chart-card">
+          <h2>Radar Chart</h2>
+          <RadarChart />
+        </div>
+        <div className="chart-card">
+          <h2>Polar Area Chart</h2>
+          <PolarAreaChart />
+        </div>
+        <div className="chart-card">
+          <h2>Doughnut Chart</h2>
+          <DoughnutChart />
+        </div>
+        <div className="chart-card">
+          <h2>Scatter Chart</h2>
+          <ScatterChart />
+        </div>
+      </div>
+    </div>
   );
 }
